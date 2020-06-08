@@ -7,7 +7,7 @@ The library is an angular interceptor service
 To install the package run:
 
 ```bash
-npm i ng-print-pdf
+npm i @shumih/ng-http-events
 ```
 
 ## Usage
