@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-http-events": [
+        "dist/ng-http-events"
+      ],
+      "ng-http-events/*": [
+        "dist/ng-http-events/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,

@@ -3,13 +3,21 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "start": "ng serve --port 4100",
+    "pack": "npm run build_lib && npm run pack_lib",
+    "start:ie": "ng serve --port 4100 --configuration es5",
+    "build_lib": "ng build ng-http-events",
+    "pack_lib": "cd dist/ng-http-events && npm pack"
   },
-  "private": true,
+  "homepage": "https://github.com/shumih/ng-http-events#readme",
+  "bugs": {
+    "email": "shumih.anton@gmail.com",
+    "url": "https://github.com/shumih/ng-http-events/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shumih/ng-http-events.git"
+  },
   "dependencies": {
     "@angular/animations": "~8.1.2",
     "@angular/common": "~8.1.2",
@@ -25,12 +33,13 @@
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.801.2",
+    "@angular-devkit/build-ng-packagr": "~0.801.3",
     "@angular/cli": "~8.1.2",
     "@angular/compiler-cli": "~8.1.2",
     "@angular/language-service": "~8.1.2",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~3.3.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "^5.0.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
@@ -39,8 +48,11 @@
     "karma-coverage-istanbul-reporter": "~2.0.1",
     "karma-jasmine": "~2.0.1",
     "karma-jasmine-html-reporter": "^1.4.0",
+    "ng-packagr": "^5.1.0",
+    "prettier": "^2.0.5",
     "protractor": "~5.4.0",
     "ts-node": "~7.0.0",
+    "tsickle": "^0.35.0",
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   }

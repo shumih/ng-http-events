@@ -56,6 +56,9 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "es5": {
+              "tsConfig": "./src/tsconfig.es5.json"
             }
           }
         },
@@ -67,6 +70,9 @@
           "configurations": {
             "production": {
               "browserTarget": "ng-http-events-app:build:production"
+            },
+            "es5": {
+              "browserTarget": "ng-http-events-app:build:es5"
             }
           }
         },
@@ -116,6 +122,41 @@
             "production": {
               "devServerTarget": "ng-http-events-app:serve:production"
             }
+          }
+        }
+      }
+    },
+    "ng-http-events": {
+      "projectType": "library",
+      "root": "projects/ng-http-events",
+      "sourceRoot": "projects/ng-http-events/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/ng-http-events/tsconfig.lib.json",
+            "project": "projects/ng-http-events/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng-http-events/src/test.ts",
+            "tsConfig": "projects/ng-http-events/tsconfig.spec.json",
+            "karmaConfig": "projects/ng-http-events/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng-http-events/tsconfig.lib.json",
+              "projects/ng-http-events/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
           }
         }
       }
